@@ -1,0 +1,10 @@
+@import url(./__image/card__image.css);
+@import url(./__text-box/card__text-box.css);
+@import url(./__title/card__title.css);
+@import url(./__like/card__like.css);
+.card {
+  max-width: 100%;
+  width: 100%; 
+  background: #FFFFFF;
+  border-radius: 10px;
+}

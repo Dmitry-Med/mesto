@@ -1,0 +1,11 @@
+@import url(./__logo/header__logo.css);
+@import url(./__line/header__line.css);
+.header {
+   margin: 0 0 36px;
+}
+
+@media screen and (max-width: 660px) {
+   .header {
+      margin: 0 0 38px;          
+   }
+}
