@@ -13,14 +13,12 @@ const formElement = popup.querySelector('.popup__form');
 
 function popupToggle() {
   if (!popup.classList.contains('popup_opened')) {
-    popupName.value = name.textContent
-    popupOccupation.value = occupation.textContent 
-    popup.classList.toggle('popup_opened')
+    popupName.value = name.textContent;
+    popupOccupation.value = occupation.textContent;    
   }
-  else {
-    popup.classList.toggle('popup_opened')
-  }
+    popup.classList.toggle('popup_opened');
 }
+
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
@@ -31,4 +29,4 @@ function formSubmitHandler(evt) {
 
 popupOpenButton.addEventListener('click', popupToggle);
 popupCloseButton.addEventListener('click', popupToggle);
-formElement.addEventListener('submit', formSubmitHandler,);
+formElement.addEventListener('submit', formSubmitHandler);
