@@ -22,9 +22,9 @@ function popupToggle() {
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
-  name.textContent = popupName.value
-  occupation.textContent = popupOccupation.value
-  popupToggle() 
+  name.textContent = popupName.value;
+  occupation.textContent = popupOccupation.value;
+  popupToggle();
 }
 
 popupOpenButton.addEventListener('click', popupToggle);
