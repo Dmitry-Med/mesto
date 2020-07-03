@@ -21,12 +21,23 @@
     </div>
      <p class="profile__occupation">Исследователь океана</p>
    </div>
-   <button class="add-button"><img class="add-button__img" src="./images/plus.svg" alt="Кнопка Добавить"></button>
+   <button class="add-button add-button__open-popup" ><img class="add-button__img" src="./images/plus.svg" alt="Кнопка Добавить"></button>
   </section>
   <section class="cards">
     <ul class="cards__list">
-    <li class="card">     
+      <template class="card-template">
+        <li class="card">
+          <img src="" alt="" class="card__image">
+          <button type="button"  class="card__trash"></button>
+          <div class="card__text-box">
+            <h3 class="card__title"></h3>
+            <button type="button" class="card__like"></button>
+          </div>
+        </li>
+      </template>
+    <!--<li class="card">     
       <img src="./images/S-Peterburg.png" class="card__image"  alt="Фото Санкт-Петербурга">
+      <button class="card__trash"></button>
       <div class="card__text-box">
         <h3 class="card__title">Санкт-Петербург</h3>
        <button class="card__like"></button>
@@ -34,6 +45,7 @@
     </li>
     <li class="card">    
       <img src="./images/Volgograd.jpg" class="card__image"  alt="Фото Волгограда">
+      <button class="card__trash"></button>
       <div class="card__text-box">
         <h3 class="card__title">Волгоград</h3>
         <button class="card__like"></button>
@@ -41,6 +53,7 @@
     </li>
     <li class="card">   
       <img src="./images/Dagestan.jpg" class="card__image"  alt="Фото Дагестана">
+      <button class="card__trash"></button>
       <div class="card__text-box">
         <h3 class="card__title">Дагестан</h3>
         <button class="card__like"></button>
@@ -48,6 +61,7 @@
     </li>
     <li class="card">  
       <img src="./images/elbrus.png" class="card__image"  alt="Фото Эльбруса">
+      <button class="card__trash"></button>
       <div class="card__text-box">
         <h3 class="card__title">Эльбрус</h3>
         <button class="card__like"></button>
@@ -55,6 +69,7 @@
     </li>
     <li class="card">    
       <img src="./images/dombay.png" class="card__image"  alt="Фото Домбая">
+      <button class="card__trash"></button>
       <div class="card__text-box">
         <h3 class="card__title">Домбай</h3>
         <button class="card__like"></button>
@@ -62,29 +77,41 @@
     </li>
     <li class="card">  
       <img src="./images/karachaevsk.png" class="card__image"  alt="Фото Карачаевска">
+      <button class="card__trash"></button>
       <div class="card__text-box">
         <h3 class="card__title">Карачаевск</h3>
         <button class="card__like"></button>
       </div>     
-    </li>
+    </li>-->
     </ul>
    </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup popup_edit">
     <div class="popup__container">
       <button class="popup__close"><img src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form  name="form" class="popup__form">
+      <form  name="editform" class="popup__form popup__form_edit">
         <input type="text"  name="name" placeholder="Имя" class="popup__text popup__text_name">
         <input type="text"  name="occupation" placeholder="Род занятий" class="popup__text popup__text_occupation">
         <button class="popup__button popup__button_action_save">Сохранить</button>
       </form>
     </div>
-  </div>  
-  </div>
+    </div> 
+    <div class="popup popup_add">
+      <div class="popup__container">
+        <button class="popup__close"><img src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <form  name="addform" class="popup__form popup__form_develop">
+          <input type="text"  name="cardname" placeholder="Название" class="popup__text popup__text_cardname">
+          <input type="text"  name="link" placeholder="Ссылка на картинку" class="popup__text popup__text_link">
+          <button class="popup__button popup__button_action_develop">Создать</button>
+        </form>
+      </div>
+     </div>
+</div>
   <script  src='./scripts/index.js'></script>
  </body>
 </html>
