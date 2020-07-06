@@ -1,14 +1,11 @@
 .popup__close {   
   position: absolute;
-  top: -38px;
-  right: -38px;   
+  top: -34px;
+  right: -40px;   
   background: rgba(0,0,0,0);
   border-style: none;
   box-shadow: none;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .popup__close:hover { 
@@ -17,7 +14,8 @@
 
 @media screen and (max-width: 520px) {
   .popup__close  {
-    right: 0;
+    top: -26px;
+    right: -32px;
   }
 }
 

@@ -23,7 +23,7 @@
    </div>
    <button class="add-button add-button__open-popup" ><img class="add-button__img" src="./images/plus.svg" alt="Кнопка Добавить"></button>
   </section>
-  <section class="cards">
+  <section class="cards" aria-label="Карточки">
     <ul class="cards__list">
       <template class="card-template">
         <li class="card">
@@ -91,7 +91,7 @@
   </footer>
   <div class="popup popup_edit">
     <div class="popup__container">
-      <button class="popup__close"><img src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
+      <button class="popup__close"><img class="popup__close-img" src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
       <form  name="editform" class="popup__form popup__form_edit">
         <input type="text"  name="name" placeholder="Имя" class="popup__text popup__text_name">
@@ -102,7 +102,7 @@
     </div> 
     <div class="popup popup_add">
       <div class="popup__container">
-        <button class="popup__close"><img src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
+        <button class="popup__close"><img class="popup__close-img" src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
         <h2 class="popup__title">Новое место</h2>
         <form  name="addform" class="popup__form popup__form_develop">
           <input type="text"  name="cardname" placeholder="Название" class="popup__text popup__text_cardname">
@@ -111,7 +111,14 @@
         </form>
       </div>
      </div>
-</div>
+     <div class="popup popup_theme_dark  popup_place">
+      <div class="popup__place-container">
+        <img src="" alt="" class="popup__image">
+        <button class="popup__close"><img  class="popup__close-img" src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>       
+        <p class="popup__place-title"></p>
+     </div>
+   </div>
+  </div>
   <script  src='./scripts/index.js'></script>
  </body>
 </html>

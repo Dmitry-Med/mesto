@@ -1,5 +1,9 @@
 @import url('./__close/popup__close.css');
+@import url('./__close-img/popup__close-img.css');
+@import url('./__place-container/popup__place-container.css');
+@import url('./__image/popup__image.css');
 @import url('./__container/popup__container.css');
+@import url('./__place-title/popup__place-title.css');
 @import url('./__title/popup__title.css');
 @import url('./__text/popup__text.css');
 @import url('./__text/_name/popup__text_name.css');
@@ -16,10 +20,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0,0,0,.5);
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
+  background: rgba(0,0,0,.5);  
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.5s, opacity 0.5s linear;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
 }
