@@ -25,6 +25,14 @@ function popupEditToggle() {
 // функция "сохранить" попапа редактирования
 function formSubmitHandler(evt) {
   evt.preventDefault();
+  if(!popupEditName.value) {
+    alert('Поле Имя не заполнено');
+    return;
+  }  
+  if(!popupEditOccupation.value) {
+    alert('Поле Род занятий не заполнено');
+    return;
+  }
   name.textContent = popupEditName.value;
   occupation.textContent = popupEditOccupation.value;
   popupEditToggle();
@@ -93,9 +101,9 @@ const initialCards = [
   }
 ];
 
-// переменныеt для создания блока карточек
-  const allCards = document.querySelector(".cards__list");
-  const cardTemplate = document.querySelector(".card-template");
+// переменные для создания блока карточек
+  const allCards = document.querySelector('.cards__list');
+  const cardTemplate = document.querySelector('.card-template');
 
 // функция создания блока карточек
 function addCards(item) {
@@ -131,9 +139,17 @@ function addCards(item) {
 
   // функция добавления новой карточки
 function createCard(evt) {
-  evt.preventDefault();   
+  evt.preventDefault();  
+  if(!poppopupAddCardName.value) {
+    alert('Поле Название не заполнено');
+    return;
+  }  
+  if(!popupAddLink.value) {
+    alert('Поле Ссылка на картинку не заполнено');
+    return;
+  }
   const inputCardName = poppopupAddCardName.value;  
-  const inputCardLink = popupAddLink.value;   
+  const inputCardLink = popupAddLink.value;
   const inputCard = { name: inputCardName, link: inputCardLink };
   poppopupAddCardName.value = '' ;
   popupAddLink.value = '' ;
