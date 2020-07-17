@@ -7,13 +7,34 @@ const profile = document.querySelector('.profile');
 const name = profile.querySelector('.profile__name');
 const occupation = profile.querySelector('.profile__occupation');
 
-const popupEditName = popupEdit.querySelector('.popup__text_name');
-const popupEditOccupation = popupEdit.querySelector('.popup__text_occupation');
+const popupEditName = popupEdit.querySelector('.popup__input_type_name');
+const popupEditOccupation = popupEdit.querySelector('.popup__input_type_occupation');
 const formEditElement = popupEdit.querySelector('.popup__form_edit');
+
 // общая функция вкл-выкл попапов
 function popupToggle(popup) {
-  popup.classList.toggle('popup_opened');
+  popup.classList.toggle('popup_opened'); 
+  // обработчик закрытия попапа по клавише Esc
+  document.addEventListener('keydown', popupCloseByEsc); 
 }
+
+// функция закрытия попапа по оверлею
+function popupCloseByOverlay (evt) {  
+  if(evt.target !== evt.currentTarget){return}
+  popupToggle(evt.target);  
+  
+}
+
+// функция закрытия попапа по клавише Esc
+function popupCloseByEsc (evt) {
+  const popupActive = document.querySelector('.popup_opened');  
+  if (evt.key === "Escape"){
+  popupToggle(popupActive); 
+  // после закрытия попапа снимаем обработчик закрытия попапа по клавише Esc
+  document.removeEventListener('keydown', popupCloseByEsc);
+  }
+}
+
 //  функция вкл-выкл попапа редактирования
 function popupEditToggle() {
   if (!popupEdit.classList.contains('popup_opened')) {
@@ -21,17 +42,17 @@ function popupEditToggle() {
     popupEditOccupation.value = occupation.textContent;    
   }
   popupToggle(popupEdit);
+ 
 }
+
 // функция "сохранить" попапа редактирования
 function formSubmitHandler(evt) {
   evt.preventDefault();
-  if(!popupEditName.value) {
-    alert('Поле Имя не заполнено');
+  if(!popupEditName.value) {    
     return;
   }  
   if(!popupEditOccupation.value) {
-    alert('Поле Род занятий не заполнено');
-    return;
+       return;
   }
   name.textContent = popupEditName.value;
   occupation.textContent = popupEditOccupation.value;
@@ -41,6 +62,8 @@ function formSubmitHandler(evt) {
 popupEditOpenButton.addEventListener('click', popupEditToggle);
 popupEditCloseButton.addEventListener('click', popupEditToggle);
 formEditElement.addEventListener('submit', formSubmitHandler);
+popupEdit.addEventListener('click', popupCloseByOverlay);
+
 
 // переменные для попапа добавления карточки
 const popupAdd = document.querySelector('.popup_add');
@@ -49,29 +72,31 @@ const popupAddCloseButton = popupAdd.querySelector('.popup__close');
 
 //  функция вкл-выкл попапа добавления карточки
 function popupAddToggle() { 
-  popupToggle(popupAdd);
+  popupToggle(popupAdd); 
+  
 }
+
 //переменные попапа добавления карточки
-const poppopupAddCardName = popupAdd.querySelector('.popup__text_cardname');
-const popupAddLink = popupAdd.querySelector('.popup__text_link') ;
+const poppopupAddCardName = popupAdd.querySelector('.popup__input_type_cardname');
+const popupAddLink = popupAdd.querySelector('.popup__input_type_link') ;
 const formAddCard = popupAdd.querySelector('.popup__form_develop') ;
 
 // обработчики попапа добавления карточки
 popupAddOpenButton.addEventListener('click', popupAddToggle);
 popupAddCloseButton.addEventListener('click', popupAddToggle);
-
+popupAdd.addEventListener('click', popupCloseByOverlay);
 // переменные попапа с изображением места
 const popupPlace = document.querySelector('.popup_place');
 const popupPlaceCloseButton = popupPlace.querySelector('.popup__close');
 
 //  функция вкл-выкл попапа с изображением места
 function popupPlaceToggle() { 
-  popupToggle(popupPlace);
+  popupToggle(popupPlace);  
 }
 
-// обработчик попапа с изображением места
+// обработчики попапа с изображением места
 popupPlaceCloseButton.addEventListener('click', popupPlaceToggle);
-
+popupPlace.addEventListener('click', popupCloseByOverlay);
 
 // массив начального блока карточек
 const initialCards = [
@@ -140,12 +165,10 @@ function addCards(item) {
   // функция добавления новой карточки
 function createCard(evt) {
   evt.preventDefault();  
-  if(!poppopupAddCardName.value) {
-    alert('Поле Название не заполнено');
+  if(!poppopupAddCardName.value) {    
     return;
   }  
-  if(!popupAddLink.value) {
-    alert('Поле Ссылка на картинку не заполнено');
+  if(!popupAddLink.value) {    
     return;
   }
   const inputCardName = poppopupAddCardName.value;  
@@ -156,5 +179,6 @@ function createCard(evt) {
   addCards(inputCard);
   popupAddToggle();     
 }
+
 // обработчик добавления новой карточки
 formAddCard.addEventListener('submit', createCard);

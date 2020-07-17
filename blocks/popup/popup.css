@@ -5,11 +5,17 @@
 @import url('./__container/popup__container.css');
 @import url('./__place-title/popup__place-title.css');
 @import url('./__title/popup__title.css');
-@import url('./__text/popup__text.css');
-@import url('./__text/_name/popup__text_name.css');
-@import url('./__text/_occupation/popup__text_occupation.css');
-@import url('./__container/popup__container.css');
+@import url('./__input-field/popup__input-field.css');
+@import url('./__input/popup__input.css');
+@import url('./__input/_type/_error/popup__input_type_error.css');
+@import url('./__input/_type/_cardname/popup__input_type_cardname.css');
+@import url('./__input/_type/_name/popup__input_type_name.css');
+@import url('./__input/_type/_occupation/popup__input_type_occupation.css');
+@import url('./__input/_type/_link/popup__input_type_link.css');
+@import url('./__error/_visible/popup__error_visible.css');
+@import url('./__error/popup__error.css');
 @import url('./__button/popup__button.css');
+@import url('./__button/_disabled/popup__button_disabled.css');
 
 .popup {
   position: fixed;
@@ -20,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   background: rgba(0,0,0,.5);  
   visibility: hidden;
   opacity: 0;

@@ -1,4 +1,4 @@
-.popup__text {
+.popup__input {
   max-width: 358px;
   width: 100%;  
   font-family: Inter, Arial, sans-serif;
@@ -9,20 +9,16 @@
   border-bottom: 1px solid #f1f1f1;  
   box-sizing: border-box;
   padding: 0 0 13px;
-  margin:  0 0 30px;
-}
-
-.popup__text:last-of-type {
   margin: 0;
 }
 
+
 @media screen and (max-width: 520px) {
-  .popup__text   {
+  .popup__input   {
     max-width: 200px;
     font-size: 12px;
     line-height: 15px;
-    padding: 0 0 12px;
-    margin:  0 0 20px;
+    padding: 0 0 12px;    
   }
 }
 
