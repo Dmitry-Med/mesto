@@ -22,7 +22,6 @@ function popupToggle(popup) {
 function popupCloseByOverlay (evt) {  
   if(evt.target !== evt.currentTarget){return}
   popupToggle(evt.target);  
-  
 }
 
 // функция закрытия попапа по клавише Esc
@@ -47,17 +46,12 @@ function popupEditToggle() {
 
 // функция "сохранить" попапа редактирования
 function formSubmitHandler(evt) {
-  evt.preventDefault();
-  if(!popupEditName.value) {    
-    return;
-  }  
-  if(!popupEditOccupation.value) {
-       return;
-  }
+  evt.preventDefault();  
   name.textContent = popupEditName.value;
   occupation.textContent = popupEditOccupation.value;
   popupEditToggle();
 }
+
 // обработчики попапа редактирования
 popupEditOpenButton.addEventListener('click', popupEditToggle);
 popupEditCloseButton.addEventListener('click', popupEditToggle);
@@ -73,7 +67,6 @@ const popupAddCloseButton = popupAdd.querySelector('.popup__close');
 //  функция вкл-выкл попапа добавления карточки
 function popupAddToggle() { 
   popupToggle(popupAdd); 
-  
 }
 
 //переменные попапа добавления карточки
@@ -156,28 +149,33 @@ function addCards(item) {
   });
   // размещаем карточку в начале блока карточек
   allCards. prepend(card);
-}
+ }
   // проходим начальный массив карточек
   initialCards.forEach(function (item) {
    addCards(item);
+   blockEmptyCard( );
 });
 
   // функция добавления новой карточки
 function createCard(evt) {
-  evt.preventDefault();  
-  if(!poppopupAddCardName.value) {    
-    return;
-  }  
-  if(!popupAddLink.value) {    
-    return;
-  }
+  evt.preventDefault();    
   const inputCardName = poppopupAddCardName.value;  
   const inputCardLink = popupAddLink.value;
   const inputCard = { name: inputCardName, link: inputCardLink };
   poppopupAddCardName.value = '' ;
   popupAddLink.value = '' ;
+  blockEmptyCard( )
   addCards(inputCard);
   popupAddToggle();     
+}
+
+// функция блокировки кнопки submit при пустых значениях карточки
+function blockEmptyCard( ) {
+if(!poppopupAddCardName.value && !popupAddLink.value) {  
+  const addSubmitButton = formAddCard.querySelector('.popup__button_action_develop'); 
+  addSubmitButton.setAttribute('disabled', true);
+  addSubmitButton.classList.add('popup__button_disabled'); 
+ }
 }
 
 // обработчик добавления новой карточки
