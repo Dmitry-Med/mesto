@@ -17,11 +17,11 @@
    <div class="profile__text-box">
      <div class="profile__name-box">
      <h1 class="profile__name">Жак-Ив Кусто</h1>
-     <button class="edit-button edit-button__open-popup"><img class="edit-button__img" src="./images/pen.svg" alt="Кнопка редактирования"></button>
+     <button class="edit-button edit-button_opened"><img class="edit-button__img" src="./images/pen.svg" alt="Кнопка редактирования"></button>
     </div>
      <p class="profile__occupation">Исследователь океана</p>
    </div>
-   <button class="add-button add-button__open-popup" ><img class="add-button__img" src="./images/plus.svg" alt="Кнопка Добавить"></button>
+   <button class="add-button add-button_opened" ><img class="add-button__img" src="./images/plus.svg" alt="Кнопка Добавить"></button>
   </section>
   <section class="cards" aria-label="Карточки">
     <ul class="cards__list">
@@ -115,7 +115,7 @@
           <div class="popup__input-field">
           <input type="url"  name="link" placeholder="Ссылка на картинку" class=" popup__input popup__input_type_link" required>
           <span class="popup__error" id="link-error"></span></div>
-          <button class="popup__button popup__button_action_develop" type="submit">Создать</button>
+          <button class="popup__button popup__button_action_develop popup__button_disabled" type="submit" disabled>Создать</button>
         </form>
       </div>
      </div>
@@ -127,7 +127,8 @@
      </div>
    </div>
   </div>
-  <script  src='./scripts/index.js'></script>
+  <script  src='./scripts/initial-cards.js'></script>
+  <script  src='./scripts/index.js'></script>  
   <script  src='./scripts/validate.js'></script>
  </body>
 </html>
