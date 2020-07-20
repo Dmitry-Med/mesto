@@ -12,6 +12,7 @@ const formEditElement = popupEdit.querySelector('.popup__form_edit');
 const popupAdd = document.querySelector('.popup_add');
 const popupAddOpenButton = document.querySelector('.add-button_opened');
 const popupAddCloseButton = popupAdd.querySelector('.popup__close');
+const popupAddSubmitButton = popupAdd.querySelector('.popup__button_action_develop');
 //переменные попапа добавления карточки
 const poppopupAddCardName = popupAdd.querySelector('.popup__input_type_cardname');
 const popupAddLink = popupAdd.querySelector('.popup__input_type_link') ;
@@ -149,7 +150,11 @@ function createNewCard(evt) {
   evt.preventDefault();    
   const inputCardName = poppopupAddCardName.value;  
   const inputCardLink = popupAddLink.value;
-  const inputCard = { name: inputCardName, link: inputCardLink };  
+  const inputCard = { name: inputCardName, link: inputCardLink }; 
+  poppopupAddCardName.value = '' ;
+  popupAddLink.value = '' ;  
+  popupAddSubmitButton.setAttribute('disabled', true);
+  popupAddSubmitButton.classList.add('popup__button_disabled'); 
   const card = createCard(inputCard);  
   renderCard(card, cardsContainer);
   popupAddClose();   

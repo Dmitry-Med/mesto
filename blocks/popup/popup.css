@@ -8,13 +8,13 @@
 @import url('./__input-field/popup__input-field.css');
 @import url('./__input/popup__input.css');
 @import url('./__input/_type/_error/popup__input_type_error.css');
+@import url('./__button/_disabled/popup__button_disabled.css');
 @import url('./__input/_type/_cardname/popup__input_type_cardname.css');
 @import url('./__input/_type/_name/popup__input_type_name.css');
 @import url('./__input/_type/_occupation/popup__input_type_occupation.css');
 @import url('./__input/_type/_link/popup__input_type_link.css');
 @import url('./__error/_visible/popup__error_visible.css');
 @import url('./__error/popup__error.css');
-@import url('./__button/_disabled/popup__button_disabled.css');
 @import url('./__button/popup__button.css');
 .popup {
   position: fixed;
