@@ -26,8 +26,6 @@ const hideInputError = (input, {errorClass,inputErrorClass}) => {
   input.classList.remove(inputErrorClass);
 };
   
-
-
 // функция проверки валидности  инпута
 const checkInputValidity = (input,{errorClass,inputErrorClass, ...rest}) => {
   if (!input.validity.valid) {
@@ -37,20 +35,10 @@ const checkInputValidity = (input,{errorClass,inputErrorClass, ...rest}) => {
   }
 };
 
-const resetOldErrors = (input, {errorClass,inputErrorClass}) => {
-  const popupActive = document.querySelector('.popup_opened');
-  if (popupActive){
-    hideInputError(input, {errorClass,inputErrorClass, rest});
-  }
-};
-
-
-
  // функция невалидности какого-либо из полей формы блокирует кнопку submit
 const setEventListeners = (form,{inputSelector, submitButtonSelector,inactiveButtonClass,errorClass,inputErrorClass}) => {
   const inputList = Array.from(form.querySelectorAll(inputSelector));
-  const submitButton = form.querySelector(submitButtonSelector); 
-  /* toggleButtonState(inputList,submitButton,{inactiveButtonClass,rest});*/
+  const submitButton = form.querySelector(submitButtonSelector);   
   inputList.forEach((input) => {      
     input.addEventListener('input', function () {        
     checkInputValidity(input,{errorClass,inputErrorClass});
@@ -76,7 +64,6 @@ const toggleButtonState = (inputList, submitButton,{inactiveButtonClass, ...rest
     submitButton.classList.remove(inactiveButtonClass);     
   }
 };
-
 
 enableValidation({
   formSelector: '.popup__form',

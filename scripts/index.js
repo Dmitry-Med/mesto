@@ -67,7 +67,7 @@ function popupEditClose () {
 function formSubmitHandler(evt) {
   evt.preventDefault();  
   name.textContent = popupEditName.value;
-  occupation.textContent = popupEditOccupation.value;    
+  occupation.textContent = popupEditOccupation.value;      
   popupEditClose();
 }
 
@@ -78,12 +78,12 @@ formEditElement.addEventListener('submit', formSubmitHandler);
 popupEdit.addEventListener('click', popupCloseByOverlay);
 
 //  функция открытия попапа добавления карточки
-function popupAddOpen() { 
-  popupOpen(popupAdd); 
+function popupAddOpen() {   
+    popupOpen(popupAdd); 
 }
 
 //  функция закрытия попапа добавления карточки
-function popupAddClose() { 
+function popupAddClose() {   
   popupClose(popupAdd); 
 }
 
