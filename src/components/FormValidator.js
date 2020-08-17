@@ -74,11 +74,11 @@ export default class FormValidator {
     }  
   }
 
-  /*resetForm = (inputList) => { 
+  resetForm = (inputList) => {    
     if (this._hasInvalidInput(inputList)) {
       this._hideInputError(input);
     } 
-  } */
+  } 
 }
 
 
