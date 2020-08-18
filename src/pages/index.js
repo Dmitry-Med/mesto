@@ -56,7 +56,7 @@ const popupEdit = new PopupWithForm (
 );
 popupEdit.setEventListeners();
 
-// колбэк при нажатии на кнопку открытия попапа редактирования профиля
+// обработчик при нажатии на кнопку открытия попапа редактирования профиля
 popupEditOpenButton.addEventListener('click', () => {
   const profile = userInfoProfile.getUserInfo(); 
   const nameInput = document.querySelector('.popup__input_type_name'); 
@@ -70,13 +70,13 @@ popupEditOpenButton.addEventListener('click', () => {
 const popupAdd = new PopupWithForm (
   'popup_add',
   {handleFormSubmit:(formValue) => {rendringCards(formValue)   
-    popupAddSubmitButton.setAttribute('disabled', true);
-    popupAddSubmitButton.classList.add('popup__button_disabled');          
+   *popupAddSubmitButton.setAttribute('disabled', true);
+    popupAddSubmitButton.classList.add('popup__button_disabled');           
     popupAdd.close();
   }}    
 );
 
- // колбэк при нажатии на кнопку открытия попапа добавления карточки
+ // обработчик при нажатии на кнопку открытия попапа добавления карточки
 popupAddOpenButton.addEventListener('click', () => {popupAdd.open()});
 popupAdd.setEventListeners();
 
