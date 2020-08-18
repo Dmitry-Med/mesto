@@ -9,14 +9,12 @@ export default class FormValidator {
     this._form = form;   
   }
     // функция запуска процесса наложения валидации
-  enableValidation ()  {  
-    const formListArray = Array.from(document.querySelectorAll('.popup__form'));  
-    formListArray.forEach((form)=> {
-      form.addEventListener('submit',evt => { evt.preventDefault();    
+  enableValidation ()  {    
+    this._form.addEventListener('submit',evt => {
+       evt.preventDefault();    
       });
-    this._setEventListeners();
-    });
-  }
+    this._setEventListeners();    
+  }  
     // функция показать ошибку под полем инпута
   _showInputError = (input) => {          
     const inputName = input.getAttribute('name');
