@@ -57,18 +57,24 @@ export default class FormValidator {
     });
   }
 
-  // функция переключения активности кнопки
-  _disableButton = () => { 
+  // функция включения активности кнопки
+  _unlockButton = () => { 
     this._submitButton.removeAttribute('disabled');
     this._submitButton.classList.remove(this._inactiveButtonClass);     
   }
+  
+  // функция отключения активности кнопки
+  disableButton = () => { 
+    this._submitButton.setAttribute('disabled', true);
+    this._submitButton.classList.add(this._inactiveButtonClass);     
+  }
+
   // функция переключения активности кнопки
   _toggleButtonState = (inputList) => {  
     if (this._hasInvalidInput(inputList)) {
-      this._submitButton.setAttribute('disabled', true);
-      this._submitButton.classList.add(this._inactiveButtonClass);    
+      this.disableButton();    
     }  else {
-      this._disableButton();    
+      this._unlockButton();    
     }  
   }
 

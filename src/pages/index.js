@@ -66,14 +66,17 @@ popupEditOpenButton.addEventListener('click', () => {
   popupEdit.open();
 });
 
+
 // создание класса попапа добавления карточки
 const popupAdd = new PopupWithForm (
   'popup_add',
   {handleFormSubmit:(formValue) => {rendringCards(formValue)   
-   *popupAddSubmitButton.setAttribute('disabled', true);
-    popupAddSubmitButton.classList.add('popup__button_disabled');           
+    popupAddSubmitButton.setAttribute('disabled', true);
+    popupAddSubmitButton.classList.add('popup__button_disabled'); 
+    formAddValidator.disableButton();            
     popupAdd.close();
-  }}    
+    }
+  }    
 );
 
  // обработчик при нажатии на кнопку открытия попапа добавления карточки
