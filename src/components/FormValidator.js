@@ -78,11 +78,13 @@ export default class FormValidator {
     }  
   }
 
-  resetForm = (inputList) => {    
-    if (this._hasInvalidInput(inputList)) {
-      this._hideInputError(input);
-    } 
-  } 
+  // функция очистки ошибок формы
+  resetFormErrors = ()  => {
+    const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));        
+    inputList.forEach((input) => {
+    this._hideInputError(input);
+    })
+  }
 }
 
 

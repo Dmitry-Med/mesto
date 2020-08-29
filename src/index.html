@@ -12,13 +12,13 @@
    </header>
    <main class="content">
   <section class="profile">
-   <img class="profile__avatar" src="./images/kusto.jpg" alt="Фото Жак Ив-Кусто">
+   <button type="button" class="profile__avatar profile__avatar_opened"></button>
    <div class="profile__text-box">
      <div class="profile__name-box">
      <h1 class="profile__name">Жак-Ив Кусто</h1>
      <button class="edit-button edit-button_opened"><img class="edit-button__img" src="./images/pen.svg" alt="Кнопка редактирования"></button>
     </div>
-     <p class="profile__occupation">Исследователь океана</p>
+     <p class="profile__about">Исследователь океана</p>
    </div>
    <button class="add-button add-button_opened" ><img class="add-button__img" src="./images/plus.svg" alt="Кнопка Добавить"></button>
   </section>
@@ -30,7 +30,10 @@
           <button type="button"  class="card__trash"></button>
           <div class="card__text-box">
             <h3 class="card__title"></h3>
-            <button type="button" class="card__like"></button>
+            <div class="card__like-box">
+             <button type="button" class="card__like"></button>
+             <p class="card__like-counter"></p>
+            </div>
           </div>
         </li>
       </template>
@@ -50,12 +53,12 @@
         <input type="text"  name="username" placeholder="Имя" class="popup__input  popup__input_type_name" required minlength="2" maxlength="20">
         <span class="popup__error" id="username-error"></span> </div>
         <div class="popup__input-field">
-        <input type="text"  name="occupation" placeholder="Род занятий" class=" popup__input popup__input_type_occupation" required minlength="2" maxlength="200">
-        <span class="popup__error" id="occupation-error"></span> </div>
+        <input type="text"  name="about" placeholder="Род занятий" class=" popup__input popup__input_type_about" required minlength="2" maxlength="200">
+        <span class="popup__error" id="about-error"></span> </div>
         <button class="popup__button popup__button_action_save" type="submit">Сохранить</button>
       </form>
     </div>
-    </div> 
+  </div> 
     <div class="popup popup_add">
       <div class="popup__container">
         <button class="popup__close"><img class="popup__close-img" src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
@@ -70,7 +73,28 @@
           <button class="popup__button popup__button_action_develop popup__button_disabled" type="submit" disabled>Создать</button>
         </form>
       </div>
-     </div>
+    </div>
+    <div class="popup popup_update">
+      <div class="popup__container">
+        <button class="popup__close"><img class="popup__close-img" src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form  name="updateform" class="popup__form popup__form_update" novalidate>
+          <div class="popup__input-field">
+            <input type="url"  name="avatar" placeholder="Ссылка на аватар" class=" popup__input popup__input_type_avatar" required>
+          <span class="popup__error" id="avatar-error"></span> </div>          
+          <button class="popup__button popup__button_action_update popup__button_disabled" type="submit" disabled>Сохранить</button>
+        </form>
+      </div>
+    </div> 
+    <div class="popup popup_confirm">
+      <div class="popup__container">        
+        <button class="popup__close"><img class="popup__close-img" src="./images/close-icon.svg" alt="Закрывающая кнопка"></button>
+        <h2 class="popup__title popup__title_type_smallgap" >Вы уверены?</h2>
+        <form  name="confirmform" class="popup__form popup__form_confirm">                 
+          <button class="popup__button popup__button_action_confirm" type="submit">Да</button> 
+        </form>        
+      </div>
+    </div> 
      <div class="popup popup_theme_dark  popup_place">
       <div class="popup__place-container">
         <img src="#" alt="#" class="popup__image">

@@ -1,38 +1,22 @@
- // массив начального блока карточек
-   export const initialCards = [
-    {
-      name: 'Архыз',      
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg' 
-    },
-    {
-      name: 'Челябинская область',      
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',      
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',      
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',      
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',      
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
-  
 // переменные для попапа редактирования
 export const popupEditOpenButton = document.querySelector('.edit-button_opened');
 export const formEdit = document.querySelector('.popup__form_edit');
+export const popupEditSubmitButton = document.querySelector('.popup__button_action_save');
 // переменные для попапа добавления карточки
 export const popupAddOpenButton = document.querySelector('.add-button_opened');
 export const popupAddSubmitButton = document.querySelector('.popup__button_action_develop');
 export const formAdd = document.querySelector('.popup__form_develop') ;
+// переменные для попапа обновления аватара
+export const formUpdate = document.querySelector('.popup__form_update');
+export const popupUpdateOpenButton = document.querySelector('.profile__avatar_opened');
+export const popupUpdateSubmitButton = document.querySelector('.popup__button_action_update');
+// текст кнопок
+export const submitButtonText = 'Сохранить';
+export const createButtonText = 'Создать';
+// селектор активности кнопки лайка
+export const likeActivitySelector ='card__like_active';
+// селектор открытого попапа
+export const popupOpenedSelector ='popup_opened';
   
 // массив для класса FormValidator 
 export const config = {

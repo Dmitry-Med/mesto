@@ -5,6 +5,7 @@
 @import url('./__container/popup__container.css');
 @import url('./__place-title/popup__place-title.css');
 @import url('./__title/popup__title.css');
+@import url('./__title/_type/_smallgap/popup__title_type_smallgap.css');
 @import url('./__input-field/popup__input-field.css');
 @import url('./__input/popup__input.css');
 @import url('./__input/_type/_error/popup__input_type_error.css');
